@@ -3,6 +3,8 @@
 {% block title %}User Calorie{% endblock %}
 
 {%block content%}
+<h1>User Calorie Intake</h1>
+
 <table class="table">
     <thead>
         <tr>
@@ -25,4 +27,14 @@
     </tr>
     {% endfor %}
 </table>
+
+<h1> Food eaten today </h1>
+<ul class = "list-group">
+    {% for user in all_users %}
+        <li class="list-group-item">{{user.food}} ({{user.calorie}}) </li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
+
+

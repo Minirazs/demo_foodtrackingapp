@@ -2,6 +2,18 @@
 
 Welcome Minirazs,
 
+Introduction: 
+1.	The application allows the user to track what they have been eating. 
+2.	Create a Flask app that has template inheritance and uses Bootstrap 4.
+3.	Each record consists of 
+a.	the name of the food
+b.	how much calories it has
+c.	Which meal it was (breakfast, lunch, dinner or snack)
+d.	When was it eaten (the date). Don't worry about the date format for now, just store the date as a string
+4.	Add some dummy records to a JSON file
+5.	Create a route that allows the user to read from the JSON file and display all the records inside.
+
+
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
 
 ## Gitpod Reminders

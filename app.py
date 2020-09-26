@@ -22,7 +22,9 @@ def show_add_user():
     return render_template('add_user.template.html')
 
 @app.route('/user/add', methods=["POST"])
-def process_add_customer():
+def process_add_user():
+    print(request.form) #print the submitted form out to see the results
+
     first_name = request.form.get('first_name')
     last_name = request.form.get('last_name')
     food = request.form.get('food')
@@ -44,6 +46,50 @@ def process_add_customer():
         json.dump(database, fp)
 
     return redirect(url_for('show_users')) #redirect to function's name 'show_users'
+
+@app.route('/user/<int:id>/edit')
+def show_edit_user(id):
+    #find user record
+    user_to_edit = None
+
+    for user in database:
+        if user["id"] == id:
+            user_to_edit = user
+    
+    #if user id exists
+    if user_to_edit:
+        return render_template("edit_user.template.html", user=user_to_edit)
+
+    else:
+        return f"User with id {id} is not found!"
+
+@app.route('/user/<int:id>/edit', methods=["POST"])
+def process_edit_user(id):
+    #find user to edit
+    user_to_edit = None
+
+    for user in database:
+        if user["id"] == id:
+            user_to_edit = user
+
+    #if the user id exists, replace records with form inputs
+    if user_to_edit:
+        user_to_edit['first_name'] = request.form.get('first_name')
+        user_to_edit['last_name'] = request.form.get('last_name')
+        user_to_edit['food'] = request.form.get('food')
+        user_to_edit['calorie'] = request.form.get('calorie')
+        user_to_edit['meal'] = request.form.get('meal')
+        user_to_edit['date'] = request.form.get('date')
+
+         # save back to the json file
+        with open('food.json', 'w') as fp:
+            json.dump(database, fp)
+
+        return redirect(url_for('show_users'))
+        
+    else:
+        return f"User with id {id} is not found"
+
 
 
 # "magic code" -- boilerplate

@@ -1,6 +1,7 @@
 {%extends 'base.template.html'%}
 
 {%block content%}
+<h1>New Calorie Intake Record</h1>
 <form method="POST">
     <div>
         <label class="form-label">First Name</label>
@@ -26,11 +27,13 @@
         <label for="lunch">Lunch</label>
         <input type="radio" id="dinner" name="meal" value="dinner">
         <label for="dinner">Dinner</label>
+        <input type="radio" id="snack" name="meal" value="snack">
+        <label for="snack">Snack</label>
     </div>
     <div>
         <label class="form-label">Date</label>
         <input type="text" class="form-control" name="date"/>
-    </div>
-    <input type="submit" value="Add User"/>
+    </div><br>
+    <input type="submit" value="Add record" class="btn btn-primary"/>
 </form>
 {%endblock%}

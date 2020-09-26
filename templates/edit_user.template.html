@@ -1,0 +1,43 @@
+{%extends 'base.template.html'%}
+
+{%block content%}
+
+<!-- display that particular user record -->
+{{user}}  
+
+<h1>New Calorie Intake Record</h1>
+<form method="POST">
+    <div>
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-control" name="first_name" value="{{user.first_name}}"/>
+    </div>
+    <div>
+        <label class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="last_name" value="{{user.last_name}}"/>
+    </div>
+    <div>
+        <label class="form-label">Food</label>
+        <input type="text" class="form-control" name="food" value="{{user.food}}"/>
+    </div>
+        <div>
+        <label class="form-label">Calorie</label>
+        <input type="number" class="form-control" name="calorie" value="{{user.calorie}}"/>
+    </div>
+    <div>
+        <label class="form-label">Meal of the day</label>
+        <input type="radio" id="breakfast" name="meal" value="breakfast" {% if user.meal == "breakfast" %} checked {% endif %}/>
+        <label for="breakfast">Breakfast</label>
+        <input type="radio" id="lunch" name="meal" value="lunch" {% if user.meal == "lunch" %} checked {% endif %}>
+        <label for="lunch">Lunch</label>
+        <input type="radio" id="dinner" name="meal" value="dinner" {% if user.meal == "dinner" %} checked {% endif %}>
+        <label for="dinner">Dinner</label>
+        <input type="radio" id="snack" name="meal" value="snack" {% if user.meal == "snack" %} checked {% endif %}>
+        <label for="snack">Snack</label>
+    </div>
+    <div>
+        <label class="form-label">Date</label>
+        <input type="text" class="form-control" name="date" value="{{user.date}}"/>
+    </div><br>
+    <input type="submit" value="Edit record" class="btn btn-primary"/>
+</form>
+{%endblock%}

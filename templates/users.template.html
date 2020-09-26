@@ -14,6 +14,7 @@
             <th> Calorie </th>
             <th> Meal of the day </th>
             <th> Date </th>
+            <th> </th>
         </tr>
     </thead>
     {% for user in all_users %}
@@ -24,6 +25,9 @@
         <td>{{user.calorie}}</td>
         <td>{{user.meal}}</td>
         <td>{{user.date}}</td>
+        <td><a href="{{ url_for('show_edit_user', id=user.id) }}" 
+        class="btn btn-primary">Edit
+        </a></td>
     </tr>
     {% endfor %}
 </table>
@@ -31,7 +35,11 @@
 <h1> Food eaten today </h1>
 <ul class = "list-group">
     {% for user in all_users %}
-        <li class="list-group-item">{{user.food}} ({{user.calorie}}) </li>
+        <li class="list-group-item">
+        {{user.food}} ({{user.calorie}}) 
+        <a href="{{ url_for('show_edit_user', id=user.id )}}" class="btn btn-primary"> 
+        Edit </a>
+        </li>
     {% endfor %}
 </ul>
 

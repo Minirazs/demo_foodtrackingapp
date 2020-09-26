@@ -1,0 +1,28 @@
+{% extends 'base.template.html' %}
+
+{% block title %}User Calorie{% endblock %}
+
+{%block content%}
+<table class="table">
+    <thead>
+        <tr>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> Food Dish </th>
+            <th> Calorie </th>
+            <th> Meal of the day </th>
+            <th> Date </th>
+        </tr>
+    </thead>
+    {% for user in all_users %}
+    <tr>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td>{{user.food}}</td>
+        <td>{{user.calorie}}</td>
+        <td>{{user.meal}}</td>
+        <td>{{user.date}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

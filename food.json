@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "first_name":"Cindy",
+        "last_name":"Tan",
+        "food":"chicken rice",
+        "calorie": 300,
+        "meal": "lunch",
+        "date": "26/9/2020"
+    },
+    {
+        "id": 2,
+        "first_name":"John",
+        "last_name":"Koh",
+        "food":"laksa",
+        "calorie": 400,
+        "meal": "dinner",
+        "date": "26/9/2020"
+    },
+    {
+        "id": 3,
+        "first_name":"Ethan",
+        "last_name":"Wong",
+        "food":"Butter toast",
+        "calorie": 250,
+        "meal": "breakfast",
+        "date": "26/9/2020"
+    }
+]

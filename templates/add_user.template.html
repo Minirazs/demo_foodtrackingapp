@@ -1,0 +1,36 @@
+{%extends 'base.template.html'%}
+
+{%block content%}
+<form method="POST">
+    <div>
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-control" name="first_name"/>
+    </div>
+    <div>
+        <label class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="last_name"/>
+    </div>
+    <div>
+        <label class="form-label">Food</label>
+        <input type="text" class="form-control" name="food"/>
+    </div>
+        <div>
+        <label class="form-label">Calorie</label>
+        <input type="number" class="form-control" name="calorie"/>
+    </div>
+    <div>
+        <label class="form-label">Meal of the day</label>
+        <input type="radio" id="breakfast" name="meal" value="breakfast">
+        <label for="breakfast">Breakfast</label>
+        <input type="radio" id="lunch" name="meal" value="lunch">
+        <label for="lunch">Lunch</label>
+        <input type="radio" id="dinner" name="meal" value="dinner">
+        <label for="dinner">Dinner</label>
+    </div>
+    <div>
+        <label class="form-label">Date</label>
+        <input type="text" class="form-control" name="date"/>
+    </div>
+    <input type="submit" value="Add User"/>
+</form>
+{%endblock%}
